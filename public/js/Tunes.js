@@ -41,6 +41,16 @@
 		}
 	});
 	
+	window.LibraryAlbumView = AlbumView({
+		
+	});
+	
+	window.LibraryView = Backbone.View.extend({
+		initialize: function() {
+			_.bindAll(this, 'render');
+			this.template = _.template($('#library-template').html());
+		}
+	});
 	
 
 })(jQuery);
