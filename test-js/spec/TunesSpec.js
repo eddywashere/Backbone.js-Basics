@@ -34,4 +34,21 @@ describe("Album", function () {
         expect(this.album.get('tracks').length).toEqual(2);
     });
 
+	describe("first track", function() {
+		it("identifies correct first track", function(){
+			expect(this.album.isFirstTrack(0)).toBeTruthy();
+		});
+	});
+	
+	describe("last track", function() {
+		it("identifies the last track", function(){
+			expect(this.album.isLastTrack(1)).toBeTruthy();
+		});
+	});
+	
+	it("return the URL for a track", function () {
+        expect(this.album.trackUrlAtIndex(0))
+			.toEqual('/music/Album A Track A.mp3');
+    });
+
 });
